@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  # Контейнер с кодом на языке php
+  # правила сборки описаны в DockerFile
+  api.php:
+    build: ./backend/php_api
+    networks:
+      - mpv111
+
+  # Контейнер с кодом на NodeJS
+  api.node:
+    build: ./backend/nodejs_api
+    networks:
+      - mpv111
+
+# Контейнеры имеют доступ в интернет - сеть внутри типа мост
+# Описывает принципы взаимодействия между контейнерами
+networks:
+  mpv111:
+    driver: bridge
