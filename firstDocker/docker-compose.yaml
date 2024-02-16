@@ -14,6 +14,22 @@ services:
       - api.php
       - db.mysql
       - db.pma
+      - front.mpv111.public
+      - front.mpv111.administrator
+
+  # Контейнер с реакт приложением - все запросы по фронту обрабатывает он
+  front.mpv111.public:
+    container_name: front.mpv111.public
+    build: ./front/public
+    networks:
+      - mpv111
+
+  # Контейнер для админ панели моего сайта
+  front.mpv111.administrator:
+    container_name: front.mpv111.administrator
+    build: ./front/admin
+    networks:
+      - mpv111
 
   # Контейнер с кодом на языке php
   # правила сборки описаны в DockerFile
