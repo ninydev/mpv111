@@ -1,10 +1,28 @@
 version: '3'
 services:
 
+  ngnix.router:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - '80:80'
+    networks:
+      - mpv111
+    depends_on:
+      - api.node
+      - api.php
+      - db.mysql
+      - db.pma
+
   # Контейнер с кодом на языке php
   # правила сборки описаны в DockerFile
   api.php:
     build: ./backend/php_api
+    # Для удобства разработчика я смотнирую папку - так, что бы изменения в файлах
+    # можно было делать снаружи
+    volumes:
+      - './backend/php_api/src:/app'
     ports:
       - "8000:8000"
     networks:
