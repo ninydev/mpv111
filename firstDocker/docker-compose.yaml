@@ -5,12 +5,16 @@ services:
   # правила сборки описаны в DockerFile
   api.php:
     build: ./backend/php_api
+    ports:
+      - "8000:8000"
     networks:
       - mpv111
 
   # Контейнер с кодом на NodeJS
   api.node:
     build: ./backend/nodejs_api
+    ports:
+      - "3000:3000"
     networks:
       - mpv111
 
