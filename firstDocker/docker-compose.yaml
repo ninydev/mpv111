@@ -14,6 +14,29 @@ services:
     networks:
       - mpv111
 
+  # Контейнер для работы с базой данных MySQL
+  db.mysql:
+    container_name: db.mysql
+    image: mysql
+    ports:
+      - "3306:3306"
+    # Файл с переменными окружения - пароль, пользователь e.t.c
+    env_file:
+      - .env
+    networks:
+      - mpv111
+
+  # Добавить контейнер для работы php my admin
+  db.pma:
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db.mysql
+    networks:
+      - mpv111
+
 # Контейнеры имеют доступ в интернет - сеть внутри типа мост
 # Описывает принципы взаимодействия между контейнерами
 networks:
