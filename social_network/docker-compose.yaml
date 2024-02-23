@@ -23,6 +23,8 @@ services:
   # SQL база для социальной сети
   sn.db.mysql:
     container_name: sn.db.mysql
+    ports:
+      - '3306:3306'
     image: mysql
     env_file:
       - .env
