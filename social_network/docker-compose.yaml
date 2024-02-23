@@ -1,0 +1,38 @@
+version: '3'
+services:
+
+  # Микросервис api
+  sn.api:
+    build: ./backend/api
+    volumes:
+      - './backend/api/src:/app'
+
+  # Внешний вид социальной сети
+  sn.front.public:
+    build: ./frontend/public
+    volumes:
+      - './frontend/public/src:/app'
+
+  # Админка социальной сети
+  sn.front.admin:
+    build: ./frontend/admin
+    volumes:
+      - './frontend/admin/src:/app'
+
+
+  # SQL база для социальной сети
+  sn.db.mysql:
+    container_name: sn.db.mysql
+    image: mysql
+    env_file:
+      - .env
+
+
+  # Nginx маршрутизатор
+  sn.ngnix.router:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - '80:80'
+
