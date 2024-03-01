@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\MeController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Profile\AvatarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,11 @@ Route::post('auth/login', LoginController::class)
     ->name('api.auth.login');
 Route::get('auth/me', MeController::class)
     ->name('api.auth.me');
+
+
+Route::post('profile/avatar/upload', AvatarController::class)
+    ->name('profile.avatar.upload');
+
 
 
 

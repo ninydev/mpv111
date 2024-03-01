@@ -24,7 +24,14 @@ RUN pecl install imagick && docker-php-ext-enable imagick
 
 # Скопируем код из папки src в контейнер
 COPY ./src /app
+
+# Установить зависимости для работы приложения
 RUN composer install
+
+# Установить миграции при сборке контейнера
+# Механизм плох тем, что к моменту создания контейнера база данных может быть
+# еще не запущена
+# RUN /app/artisan migrate
 
 # Запустим laravel в режиме разработчика
 CMD ["/app/artisan", "serve", "--host=0.0.0.0" ,"--port=8000"]
