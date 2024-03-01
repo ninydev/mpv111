@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Profile\UploadAvatarRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\ImageManager;
 
 class AvatarController extends Controller
 {
@@ -22,7 +25,7 @@ class AvatarController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function __invoke(Request $request)
+    public function __invoke(UploadAvatarRequest $request)
     {
         // Проверим - прислал ли пользователь файл
         // Если нет - вренем ошибку - статус
@@ -35,16 +38,49 @@ class AvatarController extends Controller
         // Настроим переменные для хранения файла
         $avatar = $request->file('avatar');
         $user_id = $request->user()->id;
-        $path = $user_id . "/avatar.jpg";
 
-        // Сохраним файл
-        Storage::disk('avatars')->put($path, $avatar->getContent() );
-        $url = Storage::disk('avatars')->url($path);
+
+        // Проверка типа файла
+        if (!$avatar->isValid() ||
+            !in_array($avatar->getClientMimeType(), [
+                'image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'image/webp'])) {
+            return response()->json(['error' => '
+            Файл должен быть изображением в формате JPEG, PNG, JPG, GIF или WEBP'], 400);
+        }
+
+
+        // Сохраним файл - который прислал пользователь
+        $pathOriginal = $user_id . "/original";
+        Storage::disk('avatars')->put($pathOriginal, $avatar->getContent() );
+        $urlOriginal = Storage::disk('avatars')->url($pathOriginal);
+
+        // Подключим библиотеку
+        $manager = new ImageManager(new Driver());
+
+        // Создадим аватары для разных разрешений и ужмем их в формат webP
+        // 100 - 100
+        $avatarSmallManager = $manager->read($avatar->getContent());
+        $avatarSmallManager->scaleDown(100,100);
+        $pathSmall = $user_id . "/small.webp";
+        Storage::disk('avatars')->put($pathSmall, $avatarSmallManager->toWebp());
+        $urlSmall = Storage::disk('avatars')->url($pathSmall);
+
+        // 300 - 300
+        $avatarBigManager = $manager->read($avatar->getContent());
+        $avatarBigManager->scaleDown(300,300);
+        $pathBig = $user_id . "/big.webp";
+        Storage::disk('avatars')->put($pathBig, $avatarBigManager->toWebp());
+        $urlBig = Storage::disk('avatars')->url($pathBig);
+
 
         // Построим ответ
         return response()->json([
             "result" => "avatar upload",
-            "avatar_url" => $url
+            "original" => $urlOriginal,
+            "avatar_urls" => [
+                "small" => $urlSmall,
+                "big" => $urlBig
+            ]
         ], 201);
     }
 }
