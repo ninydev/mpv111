@@ -10,6 +10,12 @@ services:
     env_file:
       - .env
 
+  # InMemory Data Base - будет использоваться для кеширования и для сохранения заданий в очереди
+  sn.db.redis:
+    container_name: sn.db.redis
+    image: redis
+    ports:
+      - '6379:6379'
 
   # Внешний вид социальной сети
   sn.front.public:
@@ -30,7 +36,7 @@ services:
       - './backend/api/src:/app'
     depends_on:
       - sn.db.mysql
-
+      - sn.db.redis
 
   # Nginx маршрутизатор
   sn.ngnix.router:
@@ -43,4 +49,6 @@ services:
       - sn.api
       - sn.front.admin
       - sn.front.public
+
+
 

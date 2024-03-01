@@ -34,4 +34,13 @@ RUN composer install
 # RUN /app/artisan migrate
 
 # Запустим laravel в режиме разработчика
-CMD ["/app/artisan", "serve", "--host=0.0.0.0" ,"--port=8000"]
+# Данный подход хорош, когда мне нужно запустить только 1 приложение
+# Но если в контейнре нужно выполять их набор - мне нужен другой механизм
+# CMD ["/app/artisan", "serve", "--host=0.0.0.0" ,"--port=8000"]
+
+# Установка supervisord
+RUN apt-get install -y supervisor
+# Копирование конфигурационного файла supervisord для воркеров очереди
+COPY ./supervisor.conf /etc/supervisor/conf.d/supervisord.conf
+# Запуск сервисов контейнера
+CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

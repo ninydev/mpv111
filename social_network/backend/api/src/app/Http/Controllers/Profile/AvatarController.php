@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Profile\UploadAvatarRequest;
+use App\Jobs\AvatarScaleDownJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Drivers\Imagick\Driver;
@@ -54,33 +55,52 @@ class AvatarController extends Controller
         Storage::disk('avatars')->put($pathOriginal, $avatar->getContent() );
         $urlOriginal = Storage::disk('avatars')->url($pathOriginal);
 
-        // Подключим библиотеку
-        $manager = new ImageManager(new Driver());
+        /**
+         * Код, связанный с птимизацией аватарки необходимо выполнять
+         * в фоновом режиме - то есть вне контроллера
+         *
+         * По этому мы переносим его в Job
+         */
 
-        // Создадим аватары для разных разрешений и ужмем их в формат webP
-        // 100 - 100
-        $avatarSmallManager = $manager->read($avatar->getContent());
-        $avatarSmallManager->scaleDown(100,100);
-        $pathSmall = $user_id . "/small.webp";
-        Storage::disk('avatars')->put($pathSmall, $avatarSmallManager->toWebp());
-        $urlSmall = Storage::disk('avatars')->url($pathSmall);
+//        // Подключим библиотеку
+//        $manager = new ImageManager(new Driver());
+//
+//        // Создадим аватары для разных разрешений и ужмем их в формат webP
+//        // 100 - 100
+//        $avatarSmallManager = $manager->read($avatar->getContent());
+//        $avatarSmallManager->scaleDown(100,100);
+//        $pathSmall = $user_id . "/small.webp";
+//        Storage::disk('avatars')->put($pathSmall, $avatarSmallManager->toWebp());
+//        $urlSmall = Storage::disk('avatars')->url($pathSmall);
+//
+//        // 300 - 300
+//        $avatarBigManager = $manager->read($avatar->getContent());
+//        $avatarBigManager->scaleDown(300,300);
+//        $pathBig = $user_id . "/big.webp";
+//        Storage::disk('avatars')->put($pathBig, $avatarBigManager->toWebp());
+//        $urlBig = Storage::disk('avatars')->url($pathBig);
 
-        // 300 - 300
-        $avatarBigManager = $manager->read($avatar->getContent());
-        $avatarBigManager->scaleDown(300,300);
-        $pathBig = $user_id . "/big.webp";
-        Storage::disk('avatars')->put($pathBig, $avatarBigManager->toWebp());
-        $urlBig = Storage::disk('avatars')->url($pathBig);
+        // Выполняем задачу в фоновом режиме
+        AvatarScaleDownJob::dispatch($user_id);
 
+        /**
+         * К этому моменту у меня еще нет оптимизированных аватарок
+         * То есть - я не могу вернуть пользователю ссылки на них
+         */
+//        // Построим ответ
+//        return response()->json([
+//            "result" => "avatar upload",
+//            "original" => $urlOriginal,
+//            "avatar_urls" => [
+//                "small" => $urlSmall,
+//                "big" => $urlBig
+//            ]
+//        ], 201);
 
-        // Построим ответ
         return response()->json([
             "result" => "avatar upload",
             "original" => $urlOriginal,
-            "avatar_urls" => [
-                "small" => $urlSmall,
-                "big" => $urlBig
-            ]
+            "message" => "Ваша аватарка стоит в очереди на оптимизацию"
         ], 201);
     }
 }
