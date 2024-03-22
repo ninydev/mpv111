@@ -1,11 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import Posts from "@/components/Posts.vue";
 </script>
 
 <template>
   <header>
     <h1> Моя социальная сеть </h1>
+    <Posts></Posts>
   </header>
 </template>
 
