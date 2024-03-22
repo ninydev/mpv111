@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-23T18:53:27.039Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="MwKHJ3L66f6Y4DrUKNpj" version="23.1.5" type="device" pages="2">
+<mxfile host="Electron" modified="2024-03-22T16:35:52.145Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="euO7DwEK7P6xqu5mdaNZ" version="24.0.4" type="device" pages="3">
   <diagram name="Сторінка-1" id="DOFDPzslyzHYLmJGZmvU">
-    <mxGraphModel dx="1317" dy="996" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1024" dy="938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -86,51 +86,68 @@
     </mxGraphModel>
   </diagram>
   <diagram id="_TKd14vAOwqeijr8ANsC" name="Сторінка-2">
-    <mxGraphModel dx="1317" dy="996" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1024" dy="938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
           <mxGeometry x="370" y="30" width="270" height="610" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-10" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-10" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="750" y="50" width="360" height="440" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-2" value="Работа с постами&lt;br&gt;/api/posts" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-2" value="Работа с постами&lt;br&gt;/api/posts" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="280" width="200" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-3" value="Posts" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-3" value="Posts" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="860" y="200" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-4" value="Likes" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-4" value="Likes" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="940" y="280" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-5" value="Comments" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-5" value="Comments" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="940" y="360" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-6" value="Users" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-6" value="Users" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="860" y="120" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-7" value="Работа с пользователями&lt;br&gt;/api/users" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-7" value="Работа с пользователями&lt;br&gt;/api/users" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="405" y="50" width="200" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-8" value="Работа с лайками&lt;br&gt;/api/likes" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-8" value="Работа с лайками&lt;br&gt;/api/likes" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="400" width="200" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-9" value="Работа с комментариями&lt;br&gt;/api/comments" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-9" value="Работа с комментариями&lt;br&gt;/api/comments" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="520" width="200" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-12" value="Работа с профайлами&lt;br&gt;/api/profiles" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-12" value="Работа с профайлами&lt;br&gt;/api/profiles" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="405" y="150" width="200" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-14" value="nginx" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-14" value="nginx" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="160" y="760" width="120" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-15" value="api" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-15" value="api" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="370" y="730" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Fuae9CsgLBH2sdIu-w0U-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.017;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Fuae9CsgLBH2sdIu-w0U-14" target="Fuae9CsgLBH2sdIu-w0U-15">
+        <mxCell id="Fuae9CsgLBH2sdIu-w0U-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.017;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="Fuae9CsgLBH2sdIu-w0U-14" target="Fuae9CsgLBH2sdIu-w0U-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="7ToT1l1maKTDQS38w_ab" name="Page-3">
+    <mxGraphModel dx="1874" dy="938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6X5MKVLgWF-7NkiKx_sZ-1" value="db&lt;br&gt;&lt;br&gt;3306&amp;nbsp; -&amp;gt;&amp;nbsp; MySQL Server&lt;br&gt;&lt;br&gt;Содержит систему&lt;br&gt;управления&lt;br&gt;базой данных" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="140" width="260" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="6X5MKVLgWF-7NkiKx_sZ-2" value="api&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Мой код, который принимает запросы&lt;br&gt;&lt;b&gt;Request&lt;/b&gt;&lt;br&gt;&amp;nbsp;по маршруту типа:&lt;br&gt;&lt;br&gt;/api/entity&lt;br&gt;&lt;br&gt;и строит в ответы&lt;br&gt;&lt;b&gt;Responce&lt;/b&gt;&lt;br&gt;в формате JSON&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="140" width="260" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="6X5MKVLgWF-7NkiKx_sZ-3" value="front.public" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="140" width="240" height="280" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

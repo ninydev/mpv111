@@ -32,6 +32,8 @@ services:
   # Микросервис api
   sn.api:
     build: ./backend/api
+    ports:
+      - '8000:8000'
     volumes:
       - './backend/api/src:/app'
     depends_on:

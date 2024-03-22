@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Post\WebPostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('posts', [WebPostController::class, 'index'])
+    ->name('posts.read.all');

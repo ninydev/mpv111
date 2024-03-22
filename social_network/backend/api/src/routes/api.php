@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\MeController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Post\ApiPostController;
 use App\Http\Controllers\Profile\AvatarController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +31,8 @@ Route::post('profile/avatar/upload', AvatarController::class)
     ->name('profile.avatar.upload');
 
 
-
+Route::get('posts', [ApiPostController::class, 'index'])
+    ->name('api.posts.read.all');
 
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    return $request->user();

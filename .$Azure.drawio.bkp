@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-03-22T16:36:03.177Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="IvRl8j-6MaWqbruL6KqI" version="24.0.4" type="device" pages="4">
+<mxfile host="Electron" modified="2024-03-01T19:16:11.720Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="JrBX1mRfouA0QME_tMhN" version="23.1.5" type="device" pages="3">
   <diagram name="Сторінка-1" id="DOFDPzslyzHYLmJGZmvU">
-    <mxGraphModel dx="1024" dy="938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1464" dy="1027" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -86,7 +86,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="_TKd14vAOwqeijr8ANsC" name="Сторінка-2">
-    <mxGraphModel dx="1024" dy="938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1464" dy="1027" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -136,24 +136,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="7ToT1l1maKTDQS38w_ab" name="Page-3">
-    <mxGraphModel dx="1874" dy="938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="6X5MKVLgWF-7NkiKx_sZ-1" value="db&lt;br&gt;&lt;br&gt;3306&amp;nbsp; -&amp;gt;&amp;nbsp; MySQL Server&lt;br&gt;&lt;br&gt;Содержит систему&lt;br&gt;управления&lt;br&gt;базой данных" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="590" y="140" width="260" height="280" as="geometry" />
-        </mxCell>
-        <mxCell id="6X5MKVLgWF-7NkiKx_sZ-2" value="api&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Мой код, который принимает запросы&lt;br&gt;&lt;b&gt;Request&lt;/b&gt;&lt;br&gt;&amp;nbsp;по маршруту типа:&lt;br&gt;&lt;br&gt;/api/entity&lt;br&gt;&lt;br&gt;и строит в ответы&lt;br&gt;&lt;b&gt;Responce&lt;/b&gt;&lt;br&gt;в формате JSON&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="270" y="140" width="260" height="280" as="geometry" />
-        </mxCell>
-        <mxCell id="6X5MKVLgWF-7NkiKx_sZ-3" value="front.public" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="-30" y="140" width="240" height="280" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="hDvDO8oHn65gfXWYlWcJ" name="Page-4">
-    <mxGraphModel dx="1024" dy="938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1464" dy="1027" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
