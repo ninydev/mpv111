@@ -48,3 +48,7 @@
 2024-03-22 16:39:55,322 INFO spawned: 'laravel-migrate' with pid 25
 2024-03-22 16:39:55,479 WARN exited: laravel-migrate (exit status 0; not expected)
 2024-03-22 16:39:56,480 INFO gave up: laravel-migrate entered FATAL state, too many start retries too quickly
+2024-03-22 18:59:31,200 WARN received SIGTERM indicating exit request
+2024-03-22 18:59:31,200 INFO waiting for laravel-queues, laravel-webserver to die
+2024-03-22 18:59:32,201 WARN stopped: laravel-webserver (terminated by SIGTERM)
+2024-03-22 18:59:32,207 WARN stopped: laravel-queues (terminated by SIGTERM)
